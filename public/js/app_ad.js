@@ -1119,10 +1119,16 @@ const app_ad = {
       type: "GET",
       dataType: "json",
       success: function(likes) {
-    if (likes.oldlikes && likes.oldlikes.length > 0) {
-      $("#likes").html(likes.oldlikes[0].tt);
-    }
-    $("#likesQuantity").html("+" + likes.newlikes[0].tt);
+        if (likes.oldlikes && likes.oldlikes.length > 0) {
+          $("#likes").html(likes.oldlikes[0].tt);
+        } else {
+          $("#likes").html("0");
+        }
+        if (likes.newlikes && likes.newlikes.length > 0) {
+          $("#likesQuantity").html("+" + likes.newlikes[0].tt);
+        } else {
+          $("#likesQuantity").html("+0");
+        }
       }
     });
 

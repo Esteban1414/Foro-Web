@@ -1404,6 +1404,7 @@ const app = {
   </div>
   `;
   },
+  
   /* NO CONTENT */
   noContentPostsHtml: function () {
     return `
