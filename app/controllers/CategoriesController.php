@@ -84,4 +84,16 @@ class CategoriesController extends Controller
             exit();
         }
     }
+
+    public function getObjetiveInfo(){
+        if (isset($_GET['category']) && !empty($_GET['category'])) {
+            $category = $_GET['category'];
+            $cat = new cat();
+            $result = $cat->getObjetiveInfo($category);
+            echo $result;
+        } else {
+            redirect::to('');
+            exit();
+        }
+    }
 }

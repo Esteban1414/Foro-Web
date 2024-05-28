@@ -16,7 +16,6 @@ if(window.matchMedia('(min-width: 768px)')){
 };
 
 Respdesplegable.addEventListener("click", (e) => {
-  console.log("click")
   setTimeout(() => {
     toggleSidebar();
     navHeader.classList.toggle("hidden");
@@ -78,16 +77,13 @@ function closeSidebar() {
 document
   .getElementById("dark-mode-icon")
   .addEventListener("click", function () {
-    console.log("click");
     const htmlClasses = document.querySelector("html").classList;
     if (localStorage.getItem("theme") === "dark") {
       htmlClasses.remove("dark");
       localStorage.removeItem("theme");
-      console.log("Dark mode removed");
     } else {
       htmlClasses.add("dark");
       localStorage.setItem("theme", "dark");
-      console.log("Dark mode added");
     }
   });
 

@@ -51,7 +51,9 @@ require_once LAYOUTS_US . 'header.php';
         ?>
 
         <!-- OBJETIVE CARD -->
-        <a id="objetiveInfo" class=" mr-3 w-full mx-auto lg:w-2/12 order-first lg:order-last" href="#"><img id="objetiveGif" class="rounded-lg w-64 h-56 mx-auto lg:mb-0 mb-10" src="" alt=""></a>
+        <a id="objetiveInfo" onclick="app.objetiveInfo()" class=" mr-3 w-full mx-auto lg:w-2/12 order-first lg:order-last">
+        <img id="objetiveGif" class="rounded-lg w-64 h-56 mx-auto lg:mb-0 mb-10" src="" alt="">
+    </a>
 
     </main>
 

@@ -84,7 +84,7 @@ class categories extends Model
             return false;
         }
     }
-    
+
     public function deleteCategory($data)
     {
         $fileStatus = true;
@@ -107,12 +107,21 @@ class categories extends Model
         }
     }
 
-    public function getuserCategories($userId){
+    public function getuserCategories($userId)
+    {
         $result = $this->select(['a.img'])
             ->join('posts b', 'a.name=b.category')
             ->join('user c', 'b.userId=c.id')
             ->where([['b.userId', $userId['userId']]])
             ->groupBy([['b.category']])
+            ->get();
+        return $result;
+    }
+
+    public function getObjetiveInfo($category)
+    {
+        $result = $this->select(['name, gif, img, banner, description'])
+            ->where([['name', $category]])
             ->get();
         return $result;
     }
